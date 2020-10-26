@@ -1,2 +1,1 @@
-# terence1988.github.io
-myResume
+I planned to build this as my personal profile site to host and demonstrate my skills in web development.
