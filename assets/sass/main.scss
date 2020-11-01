@@ -734,6 +734,27 @@
 				display: block;
 				width: 100%;
 			}
+
+			>.text {
+				position: relative;
+				top:-50px;
+				color:white;
+				background-color: #4acaa8;
+				opacity: 0;
+			}
+
+			&:hover {
+				
+				img {
+					opacity: 0.5;
+				}
+
+				>.text {
+					opacity: 1;
+				}
+
+			}
+
 		}
 
 		&.main {
