@@ -29,6 +29,9 @@
 			}, 100);
 		});
 
+	//Added animations
+	$body
+
 	// Tweaks/fixes.
 
 		// Polyfill: Object fit.
