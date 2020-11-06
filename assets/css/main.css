@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P");
 /*
 	Read Only by HTML5 UP
 	html5up.net | @ajlkn
@@ -97,9 +97,8 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 body, input, select, textarea {
   color: #888;
-  font-family: "Lato", sans-serif;
+  font-family: "Press Start 2P", "Lato", sans-serif;
   font-size: 16pt;
-  font-weight: 400;
   line-height: 1.75em;
 }
 
@@ -119,7 +118,6 @@ a:hover {
 
 strong, b {
   color: #777;
-  font-weight: 700;
 }
 
 em, i {
@@ -132,7 +130,6 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #777;
-  font-weight: 700;
   line-height: 1em;
   margin: 0 0 0.5625em 0;
 }
@@ -1409,7 +1406,6 @@ header.major h2 {
 header.major h2 + p {
   color: #777;
   font-size: 1.75em;
-  font-weight: 700;
   margin-top: -0.75em;
 }
 
@@ -1422,7 +1418,6 @@ label {
   color: #777;
   display: block;
   font-size: 0.9em;
-  font-weight: 700;
   margin: 0 0 1.125em 0;
 }
 
@@ -1516,7 +1511,6 @@ input[type=radio] + label {
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
-  font-weight: 400;
   padding-left: 2.4em;
   padding-right: 0.75em;
   position: relative;
@@ -2013,7 +2007,6 @@ table td {
 table th {
   color: #777;
   font-size: 0.9em;
-  font-weight: 700;
   padding: 0 0.75em 0.75em 0.75em;
   text-align: left;
 }
@@ -2063,7 +2056,6 @@ input[type=button],
   color: #ffffff !important;
   cursor: pointer;
   display: inline-block;
-  font-weight: 700;
   height: 2.75em;
   line-height: 2.75em;
   padding: 0 1.5em;
@@ -2500,7 +2492,6 @@ input[type=button]:disabled,
   #titleBar .title {
     color: #fff;
     display: block;
-    font-weight: 700;
     height: 44px;
     line-height: 44px;
     padding: 0 1em;

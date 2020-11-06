@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>   
-    .container {
-        display: flex;
-        }
-    
-    .item1 {
-  
-        background-color: red;
-        position: absolute;
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  border-color: blue;
+}
 
-    }
-   .item2 {
-  
-        background-color:yellow;
-        opacity: 50%;
-        position: relative;
-    }
+body {
+  margin: 0;
+}
 
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    top:120px;
+    right:0;
+    min-width: 20%;
+    position:fixed;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Style the topnav links */
+.topnav a {
+  align-items: flex-end;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 </style>
-
-
+</head>
 <body>
-    <div class="container">
-        <div class="item1">12</div>
-        <div class="item2">34</div>
-    </div>
-    
-  <a href="https://store.steampowered.com/franchise/Team17/#browse">>
+
+<div class="header">
+  <h1>Header</h1>
+</div>
+
+<div class="topnav">
+  <a href="#">Link aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+  <a href="#">Link aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+  <a href="#">Link aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+</div>
+
+<div class="main">
+    <p href="#">Link aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <p href="#">Link aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <p href="#">Link aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </div>
+
 
 </body>
 </html>
