@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P");
+
+/* CSS Reset */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+//Basis
+body {
+	display: flex;
+	flex-direction: row-reverse;
+}
+html {
+	font-family: "press start 2p", "lato" !important;
+	font-weight: 400;
+	font-size: 12px;
+}
+a {
+	color: inherit;
+}
+/* Header Part */
+.header {
+	width: 15%;
+	height: 100%;
+	background-color: #61caa9;
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	align-items: center;
+	color: #fff;
+	&-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		line-height: 1.75em;
+		.image {
+			&-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			&-avatar {
+				margin: 50px 20px 10px 20px;
+				max-width: 300px;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			&-text {
+				top: -20%;
+				position: relative;
+				z-index: 10;
+			}
+		}
+	}
+
+	&-navbar-wrapper {
+		margin-top: 20%;
+		width: 100%;
+		display: block;
+		font-size: 1.5em;
+		line-height: 3em;
+		li:hover {
+			background-color: #fff;
+			color: #aaa;
+		}
+	}
+	footer {
+		margin-top: auto;
+  }
+  &-icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    justify-content: space-between;
+  }
+}
+
+/*Body Part */
+.wrapper {
+	max-width: 70%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	align-items: center;
+}
+.section .one {
+	max-width: 70%;
+}
