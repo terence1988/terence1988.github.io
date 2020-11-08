@@ -162,8 +162,8 @@ a {
 	}
 
 	&-navbar-wrapper {
-		margin-top: 20vw;
-		width: 100vw;
+		margin-top: 5vw;
+		width: 100%;
 		display: block;
 		font-size: 1.5em;
 		line-height: 3em;
@@ -176,7 +176,7 @@ a {
 		margin-top: auto;
   }
   &-icons {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     font-size: 2em;
@@ -186,7 +186,7 @@ a {
 
 /*Body Part */
 .wrapper {
-	max-width: 70vw;
+	width: 70vw;
 	position: absolute;
 	left: 0;
 	top: 0;
