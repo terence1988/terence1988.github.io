@@ -212,12 +212,15 @@ a {
 .section-one {
 	width: 100%;
 	object-fit: fill;
-	align-items: center;
+  align-items: center;
+  height:40vw;
 	img {
 		width: 100%;
 		height: 20vw;
 	}
 	&-description {
+    margin: 5vw;
+    line-height: 3;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -228,7 +231,7 @@ a {
 		&-content {
 			color: inherit;
 
-			h2 {
+			h {
 				font-size: 5em;
 				line-height: 1.2em;
 			}
@@ -248,8 +251,8 @@ a {
 }
 
 .section-two {
-  margin: 10em;
-  background-color: #bbb;
+  margin: 5em;
+
 .section-container {
   &__headline {
     font-style: bold;
@@ -265,16 +268,16 @@ a {
 	.feature-icons {
 		margin: 1em;
 		font-size: 1.5em;
-		color: #61caa9;
+
 		display: flex;
 		align-items: flex-start;
 		line-height: 10em;
-		background-color: green;
+	
 		&__column_one {
       margin: 1em 0.5em 1em 0;
 			display: flex;
 			flex-direction: column;
-      background-color: yellow;
+
        li {
          display: block;
          padding: 0.8em;
