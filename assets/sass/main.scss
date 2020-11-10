@@ -164,11 +164,25 @@ a {
 				max-width: 15vw;
 				border-radius: 100%;
 				overflow: hidden;
+				&:hover {
+					opacity: 0.5;
+					+.image-text {
+            opacity: 1;
+					}
+				}
 			}
+
 			&-text {
 				top: -20%;
 				position: relative;
-				z-index: 1010;
+				opacity: 0;
+        z-index: 1010;
+        &:hover {
+          opacity: 1;
+          +.image-avatar {
+            opacity: 0.5;
+          }
+        }
 			}
 		}
 	}
@@ -253,7 +267,7 @@ a {
 }
 
 .section-two {
-	margin: 2em 5em 1em 4em; 
+	margin: 2em 5em 1em 4em;
 	.section-container {
 		&__headline {
 			font-style: bold;
@@ -270,7 +284,15 @@ a {
 		font-size: 1.5em;
 		line-height: 2em;
 		display: grid;
-    grid-template-columns: repeat(2,35vw);
-    grid-template-rows: repeat(3,minmax(5vw,auto));
+		grid-template-columns: repeat(2, 35vw);
+		grid-template-rows: repeat(3, minmax(5vw, auto));
 	}
+}
+
+.section-three {
+  font-size: 1.75em;
+  article {
+    display: flex;
+    justify-self: space-between;
+  }
 }

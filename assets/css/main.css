@@ -165,10 +165,23 @@ a {
   border-radius: 100%;
   overflow: hidden;
 }
+.header-container .image-avatar:hover {
+  opacity: 0.5;
+}
+.header-container .image-avatar:hover + .image-text {
+  opacity: 1;
+}
 .header-container .image-text {
   top: -20%;
   position: relative;
+  opacity: 0;
   z-index: 1010;
+}
+.header-container .image-text:hover {
+  opacity: 1;
+}
+.header-container .image-text:hover + .image-avatar {
+  opacity: 0.5;
 }
 .header-navbar-wrapper {
   margin-top: 2vw;
@@ -265,6 +278,14 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 35vw);
   grid-template-rows: repeat(3, minmax(5vw, auto));
+}
+
+.section-three {
+  font-size: 1.75em;
+}
+.section-three article {
+  display: flex;
+  justify-self: space-between;
 }
 
 /*# sourceMappingURL=main.css.map */
