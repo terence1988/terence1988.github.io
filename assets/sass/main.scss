@@ -1,2 +1,7 @@
 @import "../css/reset.min.css";
-@import "../css/normalize.css"
+@import "../css/normalize.css";
+
+.container-wrapper {
+  display:flex;
+  flex-direction: row-reverse;
+}
