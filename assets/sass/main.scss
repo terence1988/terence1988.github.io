@@ -1,7 +1,23 @@
 @import "../css/reset.min.css";
 @import "../css/normalize.css";
 
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .container-wrapper {
   display:flex;
   flex-direction: row-reverse;
+}
+.personal-details {
+  height: 100vh;
+  width: 20vw;
+  position:fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4acaa8;
+  &-avatar {
+    border-radius: 50%;
+  }
 }
