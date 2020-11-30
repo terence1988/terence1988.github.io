@@ -4,13 +4,9 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-section {
-  margin: 15px 20px;
-}
-
 .container-fluid {
-  padding: 0px;
-  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .container-wrapper {
@@ -51,6 +47,9 @@ section {
   margin-top: auto;
 }
 
+.personal-portofolios > * {
+  margin: 10px 0px;
+}
 .personal-portofolios h1 {
   font-size: 3em;
 }
@@ -63,7 +62,7 @@ section {
 .personal-portofolios img {
   width: 100%;
 }
-.personal-portofolios-skills {
+.personal-portofolios-skills ul li {
   font-size: 3em;
 }
 
