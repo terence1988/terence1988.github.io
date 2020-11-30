@@ -47,8 +47,11 @@
   margin-top: auto;
 }
 
-.personal-portofolios {
-  font-size: 1.5em;
+.personal-portofolios h1 {
+  font-size: 3em;
+}
+.personal-portofolios p {
+  font-size: 1.3em;
 }
 .personal-portofolios img {
   width: 100%;
