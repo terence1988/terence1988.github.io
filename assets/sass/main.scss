@@ -4,6 +4,11 @@
 * {
   font-family: 'Courier New', Courier, monospace;
 }
+
+section {
+  margin: 15px 20px;
+}
+
 .container-fluid {
   padding:0px;
   padding:0px;
@@ -51,11 +56,19 @@
   h1 {
     font-size: 3em;
   }
+  h2 {
+    font-size: 2.5em;
+  }
   p {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   img {
     width: 100%;
   }
 
+&-skills {
+  font-size: 3em;
 }
+
+}
+
