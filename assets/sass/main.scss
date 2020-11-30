@@ -4,20 +4,53 @@
 * {
   font-family: 'Courier New', Courier, monospace;
 }
+.container-fluid {
+  padding:0px;
+  padding:0px;
+}
 
 .container-wrapper {
   display:flex;
   flex-direction: row-reverse;
 }
+
 .personal-details {
   height: 100vh;
   width: 20vw;
-  position:fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: #4acaa8;
+  &-header {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &-avatar {
+    display: block;
     border-radius: 50%;
   }
+  &-navlinks{
+    margin-top: 5vh;
+    font-size: 1.5em;
+    a {
+      color:#fff;
+      text-decoration:none;
+    }
+    :hover {
+      color:#4acaa8;
+      background-color: #ffffff;
+      text-decoration:none;
+    }
+  }
+  &-social-icons {
+    margin-top:auto;
+  }
+}
+
+.personal-portofolios {
+  font-size: 1.5em;
+  img {
+    width: 100%;
+  }
+
 }
