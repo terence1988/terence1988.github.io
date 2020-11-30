@@ -54,7 +54,7 @@
   > * {
     margin:10px 0px;
   }
-  
+
   h1 {
     font-size: 3em;
   }
@@ -67,6 +67,10 @@
   img {
     width: 100%;
   }
+
+&-banner {
+  margin-top: 0px;
+}
 
 &-skills {
   ul li {

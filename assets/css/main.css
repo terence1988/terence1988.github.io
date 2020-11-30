@@ -62,6 +62,9 @@
 .personal-portofolios img {
   width: 100%;
 }
+.personal-portofolios-banner {
+  margin-top: 0px;
+}
 .personal-portofolios-skills ul li {
   font-size: 3em;
 }
