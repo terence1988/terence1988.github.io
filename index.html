@@ -1,138 +1,147 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 	<head>
-		<title>terence-ma-1988</title>
+		<title>terence-fe-dev</title>
 		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1,user-scalable=no"
-    />
-    <!--CSS Reset and Normalize-->
-    <!--<link rel="stylesheet" href="assets/css/reset.css" /> Needed-->
-    <link rel="stylesheet" href="assets/css/normalize.css" />
-		<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-		<!-- Fontawesome CSS -->
-		<script
-			src="https://kit.fontawesome.com/24ed6c9180.js"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main_enhance.css" />
 	</head>
-	<body>
-		<main class="container-wrapper">
-			<section id="aboutMe" class="personal-details">
-				<div class="personal-details-header">
-					<img src="images/avatar.jpg" class="personal-details-avatar" />
-					<h1>Terence Ma</h1>
-					<p>What is next and what is the future?</p>
-				</div>
-				<ul class="personal-details-navlinks">
-					<li><a href="#aboutMe" class="active">About Me</a></li>
-					<li><a href="#work">Projects that I Have Done</a></li>
-					<li><a href="#contactMe">Drop Me A Message</a></li>
-				</ul>
-				<div class="personal-details-social-icons mt-auto">
-					<a href="https://github.com/terence1988"
-						><i class="fab fa-github fa-3x"></i
-					></a>
-					<a href="https://www.linkedin.com/in/terence-chengyan-ma-797a2663/"
-						><i class="fab fa-linkedin fa-3x"></i
-					></a>
-				</div>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Terence Ma</a></h1>
+					<p>I got caught by the open-source<br />
+					and now I'm totally in it</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#aboutme" class="active">About Me</a></li>
+						<li><a href="#skillsummary">Things I Am Learning</a></li>
+						<li><a href="#projsummery">Projects I have done</a></li>
+						<li><a href="#contactme">Contact</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons mt-auto">
+						<li><a href="#" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
 			</section>
 
-			<div id="work" class="personal-portofolios container-fluid">
-				<section class="personal-portofolios-banner">
-					<img class="img-fluid" src="images/banner.jpg" alter="Banner Image" />
-				</section>
-				<section class="personal-portofolios-summary">
-					<h1>Incoming Junior Web Developer / Frontend Developer</h1>
-					<p>
-						I have been working across different industries predomainately in
-						the end user technical support fields. Over the years of
-						professional experience, I have developped and demonstrated a strong
-						passion with the latest web technologies and the convenience it
-						brought to me and my colleagues.
-					</p>
-				</section>
-				<section class="personal-portofolios-skills">
-					<h1>Skill Summary</h1>
-					<ul class="row center">
-						<li class="col-6">
-							<i class="fas fa-code fa-md">Write some codes</i>
-						</li>
-						<li class="col-6">
-							<i class="fas fa-cubes fa-md">Pack them in containers</i>
-						</li>
-						<li class="col-6">
-							<i class="fas fa-book fa-md">Learn from peers</i>
-						</li>
-						<li class="col-6">
-							<i class="fas fa-coffee fa-md">Drink much coffee</i>
-						</li>
-						<li class="col-6">
-							<i class="fas fa-bolt fa-md">Recharge myself</i>
-						</li>
-						<li class="col-6">
-							<i class="fas fa-users fa-md">Work with mates</i>
-						</li>
-					</ul>
-				</section>
-				<section class="personal-portofolios-projects container-fluid">
-					<div class="personal-portofolios-project-one row">
-					  <div class="col-6"><img src="images/pic01.jpg"></div>
-            <div class="col-6">
-            <h2 class="text-center">The Tic-tac-toe react app</h2>
-            <p class="text-center">This a demo project to learn the foundation of React framework and the basic concepts</p>
-            </div>
-					</div>
-					<div class="personal-portofolios-project-two row">
-						<img class="col-6" src="images/pic02.jpg">
-            <div class="col-6">
-            <h2 class="text-center">This is the second project</h2>
-            <p class="text-center">I planned to use it as a POC for various activities</p>
-            </div>
-					</div>
-					<div class="personal-portofolios-project-three row">
-						<img class="col-6" src="images/pic03.jpg">
-            <div class="col-6">
-            <h2 class="text-center">The third project</h2>
-            <p class="text-center">THis is our program's main project that we worked a lot</p>
-            </div>
-					</div>
-				</section>
-				<section id="contactMe" class="personal-portofolios-contact-form">
-					<p>I Will Always Be Here to Answer Your Questions</p>
-					<form action="#">
-						<div class="form-group">
-							<label for="name">Your Name</label>
-							<input
-								type="text"
-								class="form-control"
-								id="name"
-								aria-describedby="emailHelp"
-								placeholder="Enter your name"
-							/>
-						</div>
-						<div class="form-group">
-							<label for="email">Email Address</label>
-							<input
-								type="email"
-								class="form-control"
-								id="email"
-								placeholder="Enter your email address"
-							/>
-						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
-				</section>
-			</div>
-		</main>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Summary -->
+							<section id="aboutme">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Web Dev / EUC Support</h2>
+										<p>Learning towards another direction, embracing CLOUD NATIVE</p>
+									</header>
+									<p>I've worked to help people getting better use of all the software we used to use, but I found better ones in the powered by the clouds. </p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="skillsummary">
+								<div class="container">
+									<h3>Things I Am Learning</h3>
+									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
+									<ul class="feature-icons">
+										<li class="icon solid fa-code">Write some codes</li>
+										<li class="icon solid fa-cubes">Pack into containers</li>
+										<li class="icon solid fa-book">Read books and watch stuff</li>
+										<li class="icon solid fa-coffee">Drink much more coffee</li>
+										<li class="icon solid fa-bolt">Keep energetic all days</li>
+										<li class="icon solid fa-users">Shadow clone techniques</li>
+									</ul>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="projsummery">
+								<div class="container">
+									<h3>Accomplished Programing Projects</h3>
+									<p>With the help of many people, I've accomplished some small projects at this stage. More is coming.</p>
+									<div class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Popular Tic-Tac-Toe from React tutorial</h4>
+												<p>This is to get a quick understanding of React/Javascript in web development</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Terraformed a small moon</h4>
+												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Snapped dark matter in the wild</h4>
+												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="contactme">
+								<div class="container">
+									<h3>Contact Me</h3>
+									<p>I'm glad if you would like to send me messages by submit it here.</p>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" class="primary" value="Send Message" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>Made by  <i class="fas fa-heart"></i></li><li>Wish You The Best</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
