@@ -1,4 +1,4 @@
-// vendor.scss v1.0 | @ajlkn | MIT licensed */
+//Leave this for learning -- vendor prefixes are not decreasingly needed
 
 // Vars.
 
@@ -311,7 +311,7 @@ $vendor-values: (
 	}
 
 	// Expand just the value?
-	@elseif $expandValue {
+	@else if $expandValue {
 		@each $vendor in $vendor-prefixes {
 			#{$property}: #{str-replace-all($value, "-prefix-", $vendor)};
 		}

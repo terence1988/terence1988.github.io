@@ -1,23 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>terence-fe-dev</title>
+		<title>terence1988</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/main_enhance.css" />
 	</head>
-	<body class="is-preload">
-
+	<body id="root">
 		<!-- Header -->
-			<section id="header">
+			<section class="header" id="header">
 				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Terence Ma</a></h1>
-					<p>I got caught by the open-source<br />
-					and now I'm totally in it</p>
+					<span class="header__image"><img src="images/avatar.jpg" alt="Profile Image" /></span>
+					<h1 id="profile"><a href="#">Terence Ma</a></h1>
+					<p>An incoming open-source lover<br />
+					who aims to solve real world problems</p>
 				</header>
-				<nav id="nav">
+				<nav class="header__navbar" id="navlink">
 					<ul>
 						<li><a href="#aboutMe" class="active">About Me</a></li>
 						<li><a href="#skillSummary">Things I Am Learning</a></li>
@@ -25,115 +23,104 @@
 						<li><a href="#contactMe">Contact</a></li>
 					</ul>
 				</nav>
-				<footer>
-					<ul class="icons mt-auto">
-						<li><a href="#" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
-						<li><a href="#" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope fa-2x"><span class="label">Email</span></a></li>
+				<footer class="header__footer">
+					<ul>
+						<li><a href="https://www.linkedin.com/in/terence-chengyan-ma-797a2663/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
+						<li><a href="https://github.com/terence1988" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></li>
+						<li><a href="mailto:terence.ma.lsu@gmail.com" class="icon solid fa-envelope fa-2x"><span class="label">Email</span></a></li>
 					</ul>
 				</footer>
 			</section>
-
 		<!-- Wrapper -->
-			<div id="wrapper">
-
+			<div class="wrapper">
 				<!-- Main -->
-					<div id="main">
-
+					<div class="main">
 						<!-- Summary -->
-							<section id="aboutMe">
-								<div class="image main" data-position="center">
+							<section class="section" id="aboutMe">
+								<div class="description__banner" data-position="center">
 									<img src="images/banner.jpg" alt="" />
 								</div>
 								<div class="container">
-									<header class="major">
-										<h2>Web Dev / EUC Support</h2>
+									<header class="description__title"><!-- div h2+p  -->
+										<h2>Frontend Engineer</h2>
 										<p>Learning towards another direction, embracing CLOUD NATIVE</p>
 									</header>
-									<p>I've worked to help people getting better use of all the software we used to use, but I found better ones in the powered by the clouds. </p>
+									<p>I've worked to help people getting better use of all the software we used to use, but I found better ones in the powered by the clouds. </p> <!-- div container > p  -->
 								</div>
 							</section>
 
-						<!-- Two -->
-							<section id="skillSummary">
-								<div class="container">
+						<!-- One -->
+							<section class="section" id="skillSummary">
+								<header class="container">
 									<h3>Things I Am Learning</h3>
 									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
+									<ul class="skill--icons">
 										<li class="icon solid fa-code">Write some codes</li>
 										<li class="icon solid fa-cubes">Pack into containers</li>
 										<li class="icon solid fa-book">Read books and watch stuff</li>
 										<li class="icon solid fa-coffee">Drink much more coffee</li>
 										<li class="icon solid fa-bolt">Keep energetic all days</li>
                     <li class="icon solid fa-users">Shadow clone techniques</li>
-                    <li class="icon solid fa-users">Shadow clone techniques</li>
 									</ul>
-									</ul>
-								</div>
+								</header>
 							</section>
 
-						<!-- Three -->
-							<section id="projsummary">
-								<div class="container">
-									<h3>Accomplished Programing Projects</h3>
+						<!-- Two -->
+							<section class="section" id="projSummary">
+								<header class="container">
+									<h3>Accomplished Projects</h3>
 									<p>With the help of many people, I've accomplished some small projects at this stage. More is coming.</p>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+									<div class="projects">
+										<article class="projects__container">
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="Gomoku link" /></a>
 											<div class="inner">
 												<h4>Popular Tic-Tac-Toe from React tutorial</h4>
 												<p>This is to get a quick understanding of React/Javascript in web development</p>
 											</div>
 										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+										<article class="projects__container">
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="Weather App link" /></a>
 											<div class="inner">
 												<h4>Terraformed a small moon</h4>
 												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
 											</div>
 										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+										<article class="projects__container">
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="LMS link" /></a>
 											<div class="inner">
 												<h4>Snapped dark matter in the wild</h4>
 												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
 											</div>
 										</article>
 									</div>
-								</div>
+								</header>
 							</section>
 
-						<!-- Four -->
-							<section class="container"id="contactMe">
-								<div class="container">
+						<!-- Three -->
+							<section class="section" id="contactMe">  <!--section container is for width(100%) between sections, section is for id navs)--> 
+								<header class="container">
 									<h3>Contact Me</h3>
-									<p>I'm glad if you would like to send me messages by submit it here.</p>
+									<p>You can send me messages via submitting this form</p>
 									<form method="post" action="https://formspree.io/f/mvovrpjp">
 										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+											<div class="col-6 col-12-small"><input type="text" name="name" id="name" placeholder="Name" /></div>
+											<div class="col-6 col-12-small"><input type="email" name="email" id="email" placeholder="Email" /></div>
 											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
 											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-												</ul>
+											<div class="col-12"><button type="submit" class="primary" value="Send Message">Send Massage</button>
 											</div>
 										</div>
 									</form>
-								</div>
+								</header>
 							</section>
-					</div>
-
 				<!-- Footer -->
-					<section id="footer">
+					<section class="footer">
 						<div class="container">
 							<ul class="copyright">
 								<li>Made by  <i class="fas fa-heart"></i></li><li>Wish You The Best</a></li>
 							</ul>
 						</div>
-					</section>
-
+          </section>
 			</div>
 
 		<!-- Scripts -->
