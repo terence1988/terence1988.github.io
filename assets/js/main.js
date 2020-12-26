@@ -10,7 +10,7 @@
 		$body = $("body"),
 		$header = $("#header"),
 		$titleBar = null,
-		$nav = $("#nav");
+		$nav = $("#navlinks");
 
 	// Breakpoints.
 	breakpoints({
@@ -47,56 +47,21 @@
 
 	// Header Panel.
 
-	// Nav.
+	// Nav. Get a list, remove other active classes and leave current target a active
 	var $nav_a = $nav.find("a");
 
-	$nav_a
-		.addClass("scrolly")
-		.on("click", function () {
-			var $this = $(this);
+	$nav_a.addClass("scrolly").on("click", function () {
+		var $this = $(this);
 
-			// External link? Bail.
-			if ($this.attr("href").charAt(0) != "#") return;
+		// External link? Bail.
+		if ($this.attr("href").charAt(0) != "#") return;
 
-			// Deactivate all links.
-			$nav_a.removeClass("active");
+		// Deactivate all links.
+		$nav_a.removeClass("active");
 
-			// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-			$this.addClass("active").addClass("active-locked");
-		})
-		.each(function () {
-			var $this = $(this),
-				id = $this.attr("href"),
-				$section = $(id);
-
-			// No section for this link? Bail.
-			if ($section.length < 1) return;
-
-			// Scrollex.
-			$section.scrollex({
-				mode: "middle",
-				top: "5vh",
-				bottom: "5vh",
-				initialize: function () {
-					// Deactivate section.
-					$section.addClass("inactive");
-				},
-				enter: function () {
-					// Activate section.
-					$section.removeClass("inactive");
-
-					// No locked links? Deactivate all links and activate this section's one.
-					if ($nav_a.filter(".active-locked").length == 0) {
-						$nav_a.removeClass("active");
-						$this.addClass("active");
-					}
-
-					// Otherwise, if this section's link is the one that's locked, unlock it.
-					else if ($this.hasClass("active-locked"))
-						$this.removeClass("active-locked");
-				},
-			});
-		});
+		// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+		$this.addClass("active", "active-locked");
+	});
 
 	// Title Bar.
 	$titleBar = $(

@@ -10,24 +10,24 @@
 		<!-- Header -->
 			<section class="header" id="header">
 				<header>
-					<span class="header__image"><img src="images/avatar.jpg" alt="Profile Image" /></span>
+					<div class="header__image"><img src="images/avatar.jpg" alt="Profile Image" /></div>
 					<h1 id="profile"><a href="#">Terence Ma</a></h1>
-					<p>An incoming open-source lover<br />
-					who aims to solve real world problems</p>
+					<p>An open-source software lover who<br />
+					 solve problems for fun</p>
 				</header>
-				<nav class="header__navbar" id="navlink">
+				<nav class="header__navbar" id="navlinks">
 					<ul>
-						<li><a href="#aboutMe" class="active">About Me</a></li>
-						<li><a href="#skillSummary">Things I Am Learning</a></li>
-						<li><a href="#projSummary">Projects I have done</a></li>
-						<li><a href="#contactMe">Contact</a></li>
+						<li><a href="#aboutme" class="active">About Me</a></li>
+						<li><a href="#skillsummary">Things I Am Learning</a></li>
+						<li><a href="#projectsummary">Projects I have done</a></li>
+						<li><a href="#contactme">Contact</a></li>
 					</ul>
 				</nav>
 				<footer class="header__footer">
 					<ul>
-						<li><a href="https://www.linkedin.com/in/terence-chengyan-ma-797a2663/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://github.com/terence1988" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></li>
-						<li><a href="mailto:terence.ma.lsu@gmail.com" class="icon solid fa-envelope fa-2x"><span class="label">Email</span></a></li>
+						<li ><a href="https://www.linkedin.com/in/terence-chengyan-ma-797a2663/" class="icon brands fa-2x fa-linkedin"><label class="label">Linkedin</label></a></li> <!--invisible anchor with icon :before-->
+						<li><a href="https://github.com/terence1988" class="icon brands fa-2x fa-github"><label class="label">Github</label></a></li>
+						<li><a href="mailto:terence.ma.lsu@gmail.com" class="icon solid fa-2x fa-envelope"><label class="label">GMAIL</label></a></li><!--label nested is shorthand for "for"-->
 					</ul>
 				</footer>
 			</section>
@@ -36,12 +36,12 @@
 				<!-- Main -->
 					<div class="main">
 						<!-- Summary -->
-							<section class="section" id="aboutMe">
-								<div class="description__banner" data-position="center">
+							<section class="section main__description" id="aboutme">
+								<div class="main__description__banner" data-position="center">
 									<img src="images/banner.jpg" alt="" />
 								</div>
 								<div class="container">
-									<header class="description__title"><!-- div h2+p  -->
+									<header class="main__description__title"><!-- header h2+p  -->
 										<h2>Frontend Engineer</h2>
 										<p>Learning towards another direction, embracing CLOUD NATIVE</p>
 									</header>
@@ -50,11 +50,11 @@
 							</section>
 
 						<!-- One -->
-							<section class="section" id="skillSummary">
+							<section class="section main__skills" id="skillsummary">
 								<header class="container">
 									<h3>Things I Am Learning</h3>
 									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="skill--icons">
+									<ul class="icons main__skills--icons">
 										<li class="icon solid fa-code">Write some codes</li>
 										<li class="icon solid fa-cubes">Pack into containers</li>
 										<li class="icon solid fa-book">Read books and watch stuff</li>
@@ -66,38 +66,38 @@
 							</section>
 
 						<!-- Two -->
-							<section class="section" id="projSummary">
+							<section class="section main__portfolios" id="projectsummary">
 								<header class="container">
 									<h3>Accomplished Projects</h3>
 									<p>With the help of many people, I've accomplished some small projects at this stage. More is coming.</p>
 									<div class="projects">
 										<article class="projects__container">
 											<a href="#" class="image"><img src="images/pic01.jpg" alt="Gomoku link" /></a>
-											<div class="inner">
+											<header class="inner">
 												<h4>Popular Tic-Tac-Toe from React tutorial</h4>
 												<p>This is to get a quick understanding of React/Javascript in web development</p>
-											</div>
+											</header>
 										</article>
 										<article class="projects__container">
 											<a href="#" class="image"><img src="images/pic02.jpg" alt="Weather App link" /></a>
-											<div class="inner">
+											<header class="inner">
 												<h4>Terraformed a small moon</h4>
 												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
+											</header>
 										</article>
 										<article class="projects__container">
 											<a href="#" class="image"><img src="images/pic03.jpg" alt="LMS link" /></a>
-											<div class="inner">
+											<header class="inner">
 												<h4>Snapped dark matter in the wild</h4>
 												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
+											</header>
 										</article>
 									</div>
 								</header>
 							</section>
 
 						<!-- Three -->
-							<section class="section" id="contactMe">  <!--section container is for width(100%) between sections, section is for id navs)--> 
+							<section class="section main__contact" id="contactme">  <!--section container is for width(100%) between sections, section is for id navs)--> 
 								<header class="container">
 									<h3>Contact Me</h3>
 									<p>You can send me messages via submitting this form</p>
@@ -114,18 +114,15 @@
 								</header>
 							</section>
 				<!-- Footer -->
-					<section class="footer">
-						<div class="container">
+					<section class="main__footer">
 							<ul class="copyright">
-								<li>Made by  <i class="fas fa-heart"></i></li><li>Wish You The Best</a></li>
+								<li>Made By</li><li class="icon solid fa-heart">Merry Xmas</a></li>
 							</ul>
-						</div>
           </section>
 			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
