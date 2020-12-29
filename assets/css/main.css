@@ -3,7 +3,7 @@
 @import "../css/reset.min.css";
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
-/* Basic/Re-usable elements */
+/* Basic/Re-usable html elements with combinations */
 html {
   box-sizing: border-box;
 }
@@ -844,7 +844,7 @@ textarea {
   font-family: "Font Awesome 5 Brands";
 }
 
-/* Feature Icons customize icons :before and it is generally used in a list in this template */
+/* Feature Icons customize icons use :before elements and it is generally used in a list in this template */
 ul.icons {
   list-style: none;
   padding-left: 0;
@@ -924,8 +924,14 @@ input[type=button]:active,
 button:active {
   background-color: #8b8b8b;
 }
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus,
+button:focus {
+  outline: 0;
+}
 
-/* Header  style need to be fixed*/
+/* Header*/
 .header {
   display: -moz-flex;
   display: -webkit-flex;
@@ -1036,6 +1042,7 @@ button:active {
   border-radius: 100%;
 }
 .header__footer ul {
+  margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1075,13 +1082,17 @@ button:active {
   display: flex;
 }
 .projects__container > a {
-  display: inline-block;
+  display: block;
   width: 48%;
   padding-right: 2.5em;
 }
 .projects__container > a > img {
   width: 100%;
   border-radius: 5px;
+}
+.projects__container__inner {
+  width: 50%;
+  display: inline-block;
 }
 .projects article {
   border-top: solid 3px #f4f4f4;
@@ -1195,7 +1206,6 @@ textarea {
     z-index: 1001;
     background: #222;
     color: #fff;
-    min-width: 320px;
   }
   #titleBar .title {
     color: #fff;
@@ -1280,11 +1290,11 @@ textarea {
 
   /* Header */
   .header {
-    width: 20em;
-    -moz-transform: translateX(20em);
-    -webkit-transform: translateX(20em);
-    -ms-transform: translateX(20em);
-    transform: translateX(20em);
+    width: 17em;
+    -moz-transform: translateX(17em);
+    -webkit-transform: translateX(17em);
+    -ms-transform: translateX(17em);
+    transform: translateX(17em);
     right: 0;
   }
   .header > footer {
@@ -1407,10 +1417,10 @@ textarea {
 
   body.header-visible .wrapper,
 body.header-visible #titleBar {
-    -moz-transform: translateX(-20em);
-    -webkit-transform: translateX(-20em);
-    -ms-transform: translateX(-20em);
-    transform: translateX(-20em);
+    -moz-transform: translateX(-17em);
+    -webkit-transform: translateX(-17em);
+    -ms-transform: translateX(-17em);
+    transform: translateX(-17em);
   }
   body.header-visible .header {
     -moz-transform: translateX(0);
@@ -1431,6 +1441,13 @@ body.header-visible #titleBar {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+  }
+
+  .wrapper > .main {
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
   }
 }
 

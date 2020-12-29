@@ -1,9 +1,9 @@
-@import "libs/vars";
-@import "libs/functions";
-@import "libs/mixins";
-@import "libs/vendor";
-@import "libs/breakpoints";
-@import "libs/html-grid";
+@import "libs/_vars";
+@import "libs/_functions";
+@import "libs/_mixins";
+@import "libs/_vendor";
+@import "libs/_breakpoints";
+@import "libs/_html-grid";
 @import "../css/normalize.css";
 @import "../css/reset.min.css";
 @import url("fontawesome-all.min.css");
@@ -25,7 +25,7 @@
 
 $size-header: 20em; //vw or em this is a question
 
-/* Basic/Re-usable elements */
+/* Basic/Re-usable html elements with combinations */
 // Set box model to border-box.
 // Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
 html {
@@ -326,7 +326,7 @@ textarea {
 	}
 }
 
-/* Feature Icons customize icons :before and it is generally used in a list in this template */
+/* Feature Icons customize icons use :before elements and it is generally used in a list in this template */
 
 ul.icons {
 	list-style: none;
@@ -393,9 +393,12 @@ button {
 	&:active {
 		background-color: darken(_palette(accent2, bg), 5);
 	}
+	&:focus {
+		outline: 0;
+	}
 }
 
-/* Header  style need to be fixed*/
+/* Header*/
 .header {
 	@include vendor("display", "flex");
 	@include vendor("flex-direction", "column");
@@ -476,7 +479,6 @@ button {
 						color: _palette(header, bg) !important;
 					}
 				}
-
 				&:first-child {
 					border-top: 0;
 				}
@@ -494,6 +496,7 @@ button {
 	}
 	&__footer {
 		ul {
+			margin-top: auto;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -547,13 +550,17 @@ button {
 	&__container {
 		display: flex;
 		> a {
-			display: inline-block;
+			display: block;
 			width: 48%;
 			padding-right: 2.5em; // padding on outside block
 			> img {
 				width: 100%;
 				border-radius: _size(border-radius);
 			}
+		}
+		&__inner {
+			width: 50%; // The content needs width to keep format
+			display: inline-block;
 		}
 	}
 	article {
@@ -587,7 +594,7 @@ button {
 		}
 	}
 }
-// titlebar
+// titlebar none on normal view
 #titleBar {
 	display: none;
 }
@@ -660,8 +667,6 @@ button {
 		z-index: _misc(z-index-base) + 1;
 		background: #222;
 		color: #fff;
-		min-width: 320px;
-
 		.title {
 			color: #fff;
 			display: block;
@@ -740,6 +745,7 @@ button {
 
 /* SMALL */
 @include breakpoint("<=small") {
+	$size-header: 17em;
 	/* Basic */
 
 	html,
@@ -901,5 +907,8 @@ button {
 	.header {
 		@include vendor("transition", ("transform #{_duration(header)} ease"));
 		@include vendor("transform", "translateX(0)");
+	}
+	.wrapper > .main {
+		@include vendor("transition", ("transform #{_duration(header)} ease"));
 	}
 }

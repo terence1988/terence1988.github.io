@@ -2,7 +2,7 @@
 	Read Only by HTML5 UP
 	html5up.net | @ajlkn
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  Adapted by Terence
+  Adapted by Terence Ma, removed redundant code
 */
 
 (function ($) {
@@ -59,18 +59,18 @@
 		// Deactivate all links.
 		$nav_a.removeClass("active");
 
-		// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+		// Activate link *and* lock it (so scrolly doesn't try to activate other links as we're scrolling to this one's section).
 		$this.addClass("active", "active-locked");
 	});
 
 	// Title Bar.
 	$titleBar = $(
-		'<div id="titleBar">' +
-			'<a href="#header" class="toggle"></a>' +
-			'<span class="title">' +
-			$("#profile").html() +
-			"</span>" +
-			"</div>"
+		`<div id="titleBar"> 
+			<a href="#header" class="toggle"></a>
+			<span class="title">
+			${$("#profile").html()}
+			</span>
+			</div>`
 	).appendTo($body);
 
 	// Panel.
