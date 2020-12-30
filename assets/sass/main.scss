@@ -784,7 +784,6 @@ button {
 
 	/* Wrapper */
 	.wrapper {
-		/* class was overwritten by something else */
 		@include vendor("backface-visibility", "hidden");
 		@include vendor("transition", "transform #{_duration(header)} ease");
 		padding: 44px 0 1px 0;
@@ -875,7 +874,6 @@ button {
 				text-align: center;
 				top: 0;
 				width: 64px;
-
 				@if _misc(header-side) == "right" {
 					right: 0;
 				} @else {
@@ -894,7 +892,6 @@ button {
 					@include vendor("transform", "translateX(#{$size-header})");
 				}
 			}
-
 			.header {
 				@include vendor("transform", "translateX(0)");
 			}
@@ -909,6 +906,7 @@ button {
 		@include vendor("transform", "translateX(0)");
 	}
 	.wrapper > .main {
-		@include vendor("transition", ("transform #{_duration(header)} ease"));
+		@include vendor("transform", "translateX(0)");
+		@include vendor("transition", ("width #{_duration(header)} ease"));
 	}
 }
