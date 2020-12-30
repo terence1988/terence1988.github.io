@@ -1423,34 +1423,5 @@ body.header-visible #titleBar {
     transform: translateX(0);
   }
 }
-/*Resize back animation*/
-@media screen and (min-width: 1281px) {
-  /* Header transform back*/
-  .header {
-    -moz-transition: -moz-transform 0.5s ease;
-    -webkit-transition: -webkit-transform 0.5s ease;
-    -ms-transition: -ms-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  .wrapper > .main {
-    -moz-animation: mainMoveX 0.5s ease;
-    -webkit-animation: mainMoveX 0.5s ease;
-    -ms-animation: mainMoveX 0.5s ease;
-    animation: mainMoveX 0.5s ease;
-  }
-}
-@keyframes mainMoveX {
-  from {
-    transform: translateX(4em);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
 
 /*# sourceMappingURL=main.css.map */
