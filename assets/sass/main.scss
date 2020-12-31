@@ -25,6 +25,8 @@
 
 $size-header: 20em; //vw or em this is a question
 
+// Stops initial animations until page loads.
+
 /* Basic/Re-usable html elements with combinations */
 // Set box model to border-box.
 // Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
@@ -41,7 +43,16 @@ html {
 body {
 	background: _palette(bg); //pre-defined colors in _functions bg=#fff
 	position: relative;
+	&.is-preload {
+		*,
+		*:before,
+		*:after {
+			@include vendor("animation", "none !important");
+			@include vendor("transition", "none !important");
+		}
+	}
 }
+//animation loaded on will be run during window.onload (which is triggered after css is fetched)
 
 body,
 input,

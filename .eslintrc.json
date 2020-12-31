@@ -1,0 +1,38 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "jquery":true
+    },
+    //browser -- client-side code, node -- server side code, jquery -- additional package code
+    "extends": "eslint:recommended",
+//This line means that we load the default eslint rules and we customize rules below
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+      "dollar-sign",
+      "jquery"
+  ], 
+  // plug-ins for additional packages usually for dev-dependency
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}
