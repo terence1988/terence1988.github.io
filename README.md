@@ -1,3 +1,3 @@
 # This is my personal portofolio page/site
 
-WIP to make it better liftlong
+Working in Progress to make it better lifelong
