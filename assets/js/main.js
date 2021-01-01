@@ -7,60 +7,60 @@
 
 (function ($) {
 	var $window = $(window),
-		$body = $("body"),
-		$header = $("#header"),
+		$body = $('body'),
+		$header = $('#header'),
 		$titleBar = null,
-		$nav = $("#navlinks");
+		$nav = $('#navlinks');
 
 	// Breakpoints.
 	breakpoints({
-		large: ["769", "1280px"],
-		small: [null, "768px"],
+		large: ['769', '1280px'],
+		small: [null, '768px'],
 	});
 
 	// Play initial animations on page load.
-	$window.on("load", function () {
+	$window.on('load', function () {
 		window.setTimeout(function () {
-			$body.removeClass("is-preload");
+			$body.removeClass('is-preload');
 		}, 100);
 	});
 
 	// Tweaks/fixes.
 
 	// Polyfill: Object fit.
-	if (!browser.canUse("object-fit")) {
-		$(".image[data-position]").each(function () {
+	if (!browser.canUse('object-fit')) {
+		$('.image[data-position]').each(function () {
 			var $this = $(this),
-				$img = $this.children("img");
+				$img = $this.children('img');
 
 			// Apply img as background.
 			$this
-				.css("background-image", 'url("' + $img.attr("src") + '")')
-				.css("background-position", $this.data("position"))
-				.css("background-size", "cover")
-				.css("background-repeat", "no-repeat");
+				.css('background-image', 'url("' + $img.attr('src') + '")')
+				.css('background-position', $this.data('position'))
+				.css('background-size', 'cover')
+				.css('background-repeat', 'no-repeat');
 
 			// Hide img.
-			$img.css("opacity", "0");
+			$img.css('opacity', '0');
 		});
 	}
 
 	// Header Panel.
 
 	// Nav. Get a list, remove other active classes and leave current target a active
-	var $nav_a = $nav.find("a");
+	var $nav_a = $nav.find('a');
 
-	$nav_a.addClass("scrolly").on("click", function () {
+	$nav_a.addClass('scrolly').on('click', function () {
 		var $this = $(this);
 
 		// External link? Bail.
-		if ($this.attr("href").charAt(0) != "#") return;
+		if ($this.attr('href').charAt(0) != '#') return;
 
 		// Deactivate all links.
-		$nav_a.removeClass("active");
+		$nav_a.removeClass('active');
 
 		// Activate link *and* lock it (so scrolly doesn't try to activate other links as we're scrolling to this one's section).
-		$this.addClass("active", "active-locked");
+		$this.addClass('active', 'active-locked');
 	});
 
 	// Title Bar.
@@ -68,7 +68,7 @@
 		`<div id="titleBar"> 
 			<a href="#header" class="toggle"></a>
 			<span class="title">
-			${$("#profile").html()}
+			${$('#profile').html()}
 			</span>
 			</div>`
 	).appendTo($body);
@@ -80,16 +80,16 @@
 		hideOnSwipe: true,
 		resetScroll: true,
 		resetForms: true,
-		side: "right",
+		side: 'right',
 		target: $body,
-		visibleClass: "header-visible",
+		visibleClass: 'header-visible',
 	});
 
 	// Scrolly.
-	$(".scrolly").scrolly({
+	$('.scrolly').scrolly({
 		speed: 1000,
 		offset: function () {
-			if (breakpoints.active("<=large")) return $titleBar.height();
+			if (breakpoints.active('<=large')) return $titleBar.height();
 			return 0;
 		},
 	});
