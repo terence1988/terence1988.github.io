@@ -1,26 +1,25 @@
-@import "libs/_vars";
-@import "libs/_functions";
-@import "libs/_mixins";
-@import "libs/_vendor";
-@import "libs/_breakpoints";
-@import "libs/_html-grid";
-@import "../css/normalize.css";
-@import "../css/reset.min.css";
-@import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import 'libs/_vars';
+@import 'libs/_functions';
+@import 'libs/_mixins';
+@import 'libs/_vendor';
+@import 'libs/_breakpoints';
+@import '../css/normalize.css';
+@import '../css/reset.min.css';
+@import url('fontawesome-all.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400');
 // Breakpoints.
 //breakpoints(min,max) and base header section width
 @include breakpoints(
-	(
-		large: (
-			769px,
-			1280px,
-		),
-		small: (
-			null,
-			768px,
-		),
-	)
+  (
+    large: (
+      769px,
+      1280px,
+    ),
+    small: (
+      null,
+      768px,
+    ),
+  )
 );
 
 $size-header: 20em; //vw or em this is a question
@@ -31,53 +30,57 @@ $size-header: 20em; //vw or em this is a question
 // Set box model to border-box.
 // Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-	background: _palette(bg); //pre-defined colors in _functions bg=#fff
-	position: relative;
-	&.is-preload {
-		*,
-		*:before,
-		*:after {
-			@include vendor("animation", "none !important");
-			@include vendor("transition", "none !important");
-		}
-	}
+  background: _palette(bg); //pre-defined colors in _functions bg=#fff
+  position: relative;
+  &.is-preload {
+    *,
+    *:before,
+    *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
 }
 //animation loaded on will be run during window.onload (which is triggered after css is fetched)
+
+small {
+  font-size: 0.5em;
+}
 
 body,
 input,
 select,
 textarea {
-	color: _palette(fg);
-	font-family: _font(family);
-	font-size: 16pt;
-	font-weight: _font(weight);
-	line-height: 1.5em;
+  color: _palette(fg);
+  font-family: _font(family);
+  font-size: 16pt;
+  font-weight: _font(weight);
+  line-height: 1.5em;
 }
 
 strong,
 b {
-	color: _palette(fg-bold);
-	font-weight: _font(weight-bold);
+  color: _palette(fg-bold);
+  font-weight: _font(weight-bold);
 }
 
 em,
 i {
-	font-style: italic;
+  font-style: italic;
 }
 
 p {
-	margin: 0 0 _size(element-margin) 0;
+  margin: 0 0 _size(element-margin) 0;
 } //Almost add margin at bottom
 
 h1,
@@ -86,826 +89,815 @@ h3,
 h4,
 h5,
 h6 {
-	color: _palette(fg-bold);
-	font-weight: _font(weight-bold);
-	line-height: 1em;
-	margin: 0 0 (_size(element-margin) * 0.25) 0;
+  color: _palette(fg-bold);
+  font-weight: _font(weight-bold);
+  line-height: 1em;
+  margin: 0 0 (_size(element-margin) * 0.25) 0;
 }
 
 h2 {
-	font-size: 2em;
-	line-height: 1.5em;
+  font-size: 2em;
+  line-height: 1.5em;
 }
 
 h3 {
-	font-size: 1.75em;
-	line-height: 1.5em;
+  font-size: 1.75em;
+  line-height: 1.5em;
 }
 
 h4 {
-	font-size: 1.25em;
-	line-height: 1.5em;
+  font-size: 1.25em;
+  line-height: 1.5em;
 }
 
 h5 {
-	font-size: 0.9em;
-	line-height: 1.5em;
+  font-size: 0.9em;
+  line-height: 1.5em;
 }
 
 h6 {
-	font-size: 0.7em;
-	line-height: 1.5em;
+  font-size: 0.7em;
+  line-height: 1.5em;
 }
 
 hr {
-	border: 0;
-	border-bottom: solid _size(border-width) _palette(border);
-	margin: _size(element-margin) 0;
+  border: 0;
+  border-bottom: solid _size(border-width) _palette(border);
+  margin: _size(element-margin) 0;
 
-	&.major {
-		margin: (_size(element-margin) * 1.5) 0;
-	}
+  &.major {
+    margin: (_size(element-margin) * 1.5) 0;
+  }
 }
 
 code {
-	background: #555;
-	border-radius: _size(border-radius);
-	color: #fff;
-	font-family: _font(family-fixed);
-	font-size: 0.9em;
-	margin: 0 0.25em;
-	padding: 0.25em 0.65em;
+  background: #555;
+  border-radius: _size(border-radius);
+  color: #fff;
+  font-family: _font(family-fixed);
+  font-size: 0.9em;
+  margin: 0 0.25em;
+  padding: 0.25em 0.65em;
 }
 
 pre {
-	font-family: _font(family-fixed);
-	font-size: 0.9em;
-	margin: 0 0 _size(element-margin) 0;
+  font-family: _font(family-fixed);
+  font-size: 0.9em;
+  margin: 0 0 _size(element-margin) 0;
 
-	code {
-		-webkit-overflow-scrolling: touch;
-		display: block;
-		line-height: 1.5em;
-		overflow-x: auto;
-		padding: 1em 1.5em;
-	}
-}
-
-/* Row */
-.row {
-	@include html-grid(2em);
-	@include breakpoint("<=large") {
-		@include html-grid(1.5em, "large");
-	}
-	@include breakpoint("<=small") {
-		@include html-grid(1.25em, "small");
-	}
+  code {
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    line-height: 1.5em;
+    overflow-x: auto;
+    padding: 1em 1.5em;
+  }
 }
 
 /* Container */
 .container {
-	margin: 0 auto;
-	max-width: calc(100% - #{_size(element-margin) * 2});
-	width: _size(container-width);
-	&.small {
-		width: (_size(container-width) * 0.5);
-	}
-	&.large {
-		width: (_size(container-width) * 0.75);
-	}
-	@include breakpoint("<=small") {
-		width: 100% !important;
-	}
+  margin: 0 auto;
+  max-width: calc(100% - #{_size(element-margin) * 2});
+  width: _size(container-width);
+  &.small {
+    width: (_size(container-width) * 0.5);
+  }
+  &.large {
+    width: (_size(container-width) * 0.75);
+  }
+  @include breakpoint('<=small') {
+    width: 100% !important;
+  }
 }
 
 /* Section/Article */
 
 section,
 article {
-	&.special {
-		text-align: center;
-	}
+  &.special {
+    text-align: center;
+  }
 }
 
 /* Header elements in each section */
 
 header {
-	/* Inside header element, if only 1 P, if h2 AND P, etc header is the FRONTEND part */
-	p {
-		color: _palette(fg-light);
-		position: relative;
-		margin: 0 0 (_size(element-margin) * 0.75) 0;
-	}
+  /* Inside header element, if only 1 P, if h2 AND P, etc header is the FRONTEND part */
+  p {
+    color: _palette(fg-light);
+    position: relative;
+    margin: 0 0 (_size(element-margin) * 0.75) 0;
+  }
 
-	h2 + p {
-		font-size: 1.25em;
-		margin-top: -0.5em;
-		line-height: 1.5em;
-	}
+  h2 + p {
+    font-size: 1.25em;
+    margin-top: -0.5em;
+    line-height: 1.5em;
+  }
 
-	h3 + p {
-		font-size: 1.1em;
-		margin-top: -0.35em;
-		line-height: 1.5em;
-	}
+  h3 + p {
+    font-size: 1.1em;
+    margin-top: -0.35em;
+    line-height: 1.5em;
+  }
 
-	h4 + p,
-	h5 + p,
-	h6 + p {
-		font-size: 0.9em;
-		margin-top: -0.25em;
-		line-height: 1.5em;
-	}
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    font-size: 0.9em;
+    margin-top: -0.25em;
+    line-height: 1.5em;
+  }
 
-	//When header has a class"major" h2, h2&p
-	&.major {
-		h2 {
-			color: _palette(accent1, bg);
-			font-size: 3.5em;
+  //When header has a class"major" h2, h2&p
+  &.major {
+    h2 {
+      color: _palette(accent1, bg);
+      font-size: 3.5em;
 
-			& + p {
-				color: _palette(fg-bold);
-				font-size: 1.75em;
-				font-weight: _font(weight-bold);
-				margin-top: -0.75em;
-			}
-		}
-	}
+      & + p {
+        color: _palette(fg-bold);
+        font-size: 1.75em;
+        font-weight: _font(weight-bold);
+        margin-top: -0.75em;
+      }
+    }
+  }
 }
 
 /* Form */
 
 form {
-	margin: 0 0 _size(element-margin) 0;
+  margin: 0 0 _size(element-margin) 0;
 }
 
 label {
-	color: _palette(fg-bold);
-	display: block;
-	font-size: 0.9em;
-	font-weight: _font(weight-bold);
-	margin: 0 0 (_size(element-margin) * 0.5) 0;
+  color: _palette(fg-bold);
+  display: block;
+  font-size: 0.9em;
+  font-weight: _font(weight-bold);
+  margin: 0 0 (_size(element-margin) * 0.5) 0;
 }
 
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
+input[type='text'],
+input[type='password'],
+input[type='email'],
 textarea {
-	@include vendor("appearance", "none");
-	border-radius: _size(border-radius);
-	border: none;
-	border: solid _size(border-width) _palette(border2);
-	color: inherit;
-	display: block;
-	outline: 0;
-	padding: 0 1em;
-	text-decoration: none;
-	width: 100%;
+  @include vendor('appearance', 'none');
+  border-radius: _size(border-radius);
+  border: none;
+  border: solid _size(border-width) _palette(border2);
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
 
-	&:invalid {
-		box-shadow: none;
-	}
+  &:invalid {
+    box-shadow: none;
+  }
 
-	&:focus {
-		border-color: _palette(accent1, bg);
-	}
+  &:focus {
+    border-color: _palette(accent1, bg);
+  }
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-	height: _size(element-height);
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  height: _size(element-height);
 }
 
 textarea {
-	padding: 0.75em 1em;
+  padding: 0.75em 1em;
 }
 
 ::-webkit-input-placeholder {
-	color: _palette(fg-light) !important;
-	font-style: italic;
-	opacity: 1;
+  color: _palette(fg-light) !important;
+  font-style: italic;
+  opacity: 1;
 }
 
 :-moz-placeholder {
-	color: _palette(fg-light) !important;
-	font-style: italic;
-	opacity: 1;
+  color: _palette(fg-light) !important;
+  font-style: italic;
+  opacity: 1;
 }
 
 ::-moz-placeholder {
-	color: _palette(fg-light) !important;
-	font-style: italic;
-	opacity: 1;
+  color: _palette(fg-light) !important;
+  font-style: italic;
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
-	color: _palette(fg-light) !important;
-	font-style: italic;
-	opacity: 1;
+  color: _palette(fg-light) !important;
+  font-style: italic;
+  opacity: 1;
 }
 
 /* Icon  defined to use :before element for icons -- basic*/
 .icon {
-	@include icon;
-	border-bottom: none;
-	position: relative;
+  @include icon;
+  border-bottom: none;
+  position: relative;
 
-	> .label {
-		display: none;
-	}
+  > .label {
+    display: none;
+  }
 
-	&:before {
-		line-height: inherit;
-	}
+  &:before {
+    line-height: inherit;
+  }
 
-	&.solid {
-		&:before {
-			font-weight: 900;
-		}
-	}
+  &.solid {
+    &:before {
+      font-weight: 900;
+    }
+  }
 
-	&.brands {
-		&:before {
-			font-family: "Font Awesome 5 Brands";
-		}
-	}
+  &.brands {
+    &:before {
+      font-family: 'Font Awesome 5 Brands';
+    }
+  }
 }
 
 /* Feature Icons customize icons use :before elements and it is generally used in a list in this template */
 
 ul.icons {
-	list-style: none;
-	padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 
-	li {
-		@include icon;
-		display: inline-block;
-		margin: 0 0 (_size(element-margin) * 0.75) 0;
-		padding: 0.35em 0 0 3.5em;
-		position: relative;
-		vertical-align: top;
-		width: 48%;
+  li {
+    @include icon;
+    display: inline-block;
+    margin: 0 0 (_size(element-margin) * 0.75) 0;
+    padding: 0.35em 0 0 3.5em;
+    position: relative;
+    vertical-align: top;
+    width: 48%;
 
-		&:before {
-			background: _palette(accent1, bg);
-			border-radius: 100%;
-			color: _palette(accent1, fg-bold);
-			display: block;
-			height: 2.5em;
-			left: 0;
-			line-height: 2.5em;
-			position: absolute;
-			text-align: center;
-			top: 0;
-			width: 2.5em;
-		}
-	}
+    &:before {
+      background: _palette(accent1, bg);
+      border-radius: 100%;
+      color: _palette(accent1, fg-bold);
+      display: block;
+      height: 2.5em;
+      left: 0;
+      line-height: 2.5em;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 2.5em;
+    }
+  }
 }
 
 /* Button */
 
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
 button {
-	@include vendor("appearance", "none");
-	@include vendor(
-		"transition",
-		(
-			"background-color #{_duration(transition)} ease-in-out",
-			"color #{_duration(transition)} ease-in-out"
-		)
-	);
-	background-color: _palette(accent2, bg);
-	border-radius: _size(border-radius);
-	border: 0;
-	color: _palette(accent2, fg-bold) !important;
-	cursor: pointer;
-	display: inline-block;
-	font-weight: _font(weight-bold);
-	height: _size(element-height);
-	line-height: _size(element-height);
-	padding: 0 1.5em;
-	text-align: center;
-	text-decoration: none;
-	white-space: nowrap;
+  @include vendor('appearance', 'none');
+  @include vendor(
+    'transition',
+    (
+      'background-color #{_duration(transition)} ease-in-out',
+      'color #{_duration(transition)} ease-in-out'
+    )
+  );
+  background-color: _palette(accent2, bg);
+  border-radius: _size(border-radius);
+  border: 0;
+  color: _palette(accent2, fg-bold) !important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: _font(weight-bold);
+  height: _size(element-height);
+  line-height: _size(element-height);
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
 
-	&:hover {
-		background-color: lighten(_palette(accent2, bg), 5);
-		color: _palette(accent2, fg-bold) !important;
-	}
+  &:hover {
+    background-color: lighten(_palette(accent2, bg), 5);
+    color: _palette(accent2, fg-bold) !important;
+  }
 
-	&:active {
-		background-color: darken(_palette(accent2, bg), 5);
-	}
-	&:focus {
-		outline: 0;
-	}
+  &:active {
+    background-color: darken(_palette(accent2, bg), 5);
+  }
+  &:focus {
+    outline: 0;
+  }
 }
 
 /* Header*/
 .header {
-	@include vendor("display", "flex");
-	@include vendor("flex-direction", "column");
-	background: _palette(header, bg);
-	color: _palette(header, fg);
-	height: 100%;
-	overflow-y: auto;
-	position: fixed;
-	text-align: center;
-	top: 0;
-	width: $size-header;
+  @include vendor('display', 'flex');
+  @include vendor('flex-direction', 'column');
+  background: _palette(header, bg);
+  color: _palette(header, fg);
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: $size-header;
 
-	@if _misc(header-side) == "right" {
-		right: 0;
-	} @else {
-		left: 0;
-	}
+  @if _misc(header-side) == 'right' {
+    right: 0;
+  } @else {
+    left: 0;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		color: _palette(header, fg-bold);
-		a {
-			color: _palette(header, fg-bold);
-			text-decoration: none;
-		}
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: _palette(header, fg-bold);
+    a {
+      color: _palette(header, fg-bold);
+      text-decoration: none;
+    }
+  }
 
-	> header {
-		@include vendor("flex-shrink", "0");
-		padding: 2em;
+  > header {
+    @include vendor('flex-shrink', '0');
+    padding: 2em;
 
-		h1 {
-			font-size: 1.75em;
-			margin: 0;
-		}
+    h1 {
+      font-size: 1.75em;
+      margin: 0;
+    }
 
-		p {
-			color: _palette(header, fg);
-			font-style: italic;
-			margin: 1em 0 0 0;
-		}
-	}
-	> footer {
-		@include vendor("flex-shrink", "0");
-		bottom: 0;
-		left: 0;
-		padding: 0 2em 1em 2em;
-		width: 100%;
-	}
-	> nav {
-		@include vendor("flex-grow", "1");
+    p {
+      color: _palette(header, fg);
+      font-style: italic;
+      margin: 1em 0 0 0;
+    }
+  }
+  > footer {
+    @include vendor('flex-shrink', '0');
+    bottom: 0;
+    left: 0;
+    padding: 0 2em 1em 2em;
+    width: 100%;
+  }
+  > nav {
+    @include vendor('flex-grow', '1');
 
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-			li {
-				border-top: solid _size(border-width) _palette(header, border);
-				display: block;
-				padding: 0;
+      li {
+        border-top: solid _size(border-width) _palette(header, border);
+        display: block;
+        padding: 0;
 
-				a {
-					@include vendor("transition", "none");
-					border: 0;
-					color: _palette(header, fg-bold) !important;
-					display: block;
-					padding: 0.85em 0;
-					text-decoration: none;
+        a {
+          @include vendor('transition', 'none');
+          border: 0;
+          color: _palette(header, fg-bold) !important;
+          display: block;
+          padding: 0.85em 0;
+          text-decoration: none;
 
-					&.active {
-						background: _palette(bg);
-						color: _palette(header, bg) !important;
-					}
-				}
-				&:first-child {
-					border-top: 0;
-				}
-			}
-		}
-	}
-	&__image {
-		display: block;
-		margin: 0 auto _size(element-margin) auto;
-		width: 10em;
-		img {
-			width: 100%;
-			border-radius: 100%;
-		}
-	}
-	&__footer {
-		ul {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			:first-child {
-				margin-right: 0.5em;
-			}
-			:last-child {
-				margin-left: 0.5em;
-			}
-			li {
-				a {
-					color: _palette(header, fg-light);
-				}
-			}
-		}
-	}
+          &.active {
+            background: _palette(bg);
+            color: _palette(header, bg) !important;
+          }
+        }
+        &:first-child {
+          border-top: 0;
+        }
+      }
+    }
+  }
+  &__image {
+    display: block;
+    margin: 0 auto _size(element-margin) auto;
+    width: 10em;
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+  &__footer {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      :first-child {
+        margin-right: 0.5em;
+      }
+      :last-child {
+        margin-left: 0.5em;
+      }
+      li {
+        a {
+          color: _palette(header, fg-light);
+        }
+      }
+    }
+  }
 }
 
 /* Wrapper layout Do not touch*/
 .wrapper {
-	background: _palette(bg);
+  background: _palette(bg);
 
-	@if _misc(header-side) == "right" {
-		padding-right: $size-header;
-	} @else {
-		padding-left: $size-header;
-	}
+  @if _misc(header-side) == 'right' {
+    padding-right: $size-header;
+  } @else {
+    padding-left: $size-header;
+  }
 }
 
 /* Main layout Do not touch*/
 .main {
-	&__description__banner {
-		img {
-			width: 100%;
-		}
-	}
-	> section {
-		border-top: solid (_size(border-width) * 3) _palette(border);
+  &__description__banner {
+    img {
+      width: 100%;
+    }
+  }
+  > section {
+    border-top: solid (_size(border-width) * 3) _palette(border);
 
-		> .container {
-			padding: 6em 0 4em 0;
-		}
+    > .container {
+      padding: 6em 0 4em 0;
+    }
 
-		&:first-child {
-			border-top: 0;
-		}
-	}
+    &:first-child {
+      border-top: 0;
+    }
+  }
 }
 /* Project layout */
 .projects {
-	&__container {
-		display: flex;
-		> a {
-			display: block;
-			width: 48%;
-			padding-right: 2.5em; // padding on outside block
-			> img {
-				width: 100%;
-				border-radius: _size(border-radius);
-			}
-		}
-		&__inner {
-			width: 50%; // The content needs width to keep format
-			display: inline-block;
-		}
-	}
-	article {
-		border-top: solid (_size(border-width) * 1.5) _palette(border);
-		margin-bottom: _size(element-margin);
-		padding-top: _size(element-margin);
-		&:first-child {
-			border-top: 0;
-			padding-top: 0;
-		}
-	}
+  &__container {
+    display: flex;
+    > a {
+      display: block;
+      width: 48%;
+      padding-right: 2.5em; // padding on outside block
+      > img {
+        width: 100%;
+        border-radius: _size(border-radius);
+      }
+    }
+    &__inner {
+      width: 50%; // The content needs width to keep format
+      display: inline-block;
+    }
+  }
+  article {
+    border-top: solid (_size(border-width) * 1.5) _palette(border);
+    margin-bottom: _size(element-margin);
+    padding-top: _size(element-margin);
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+  }
 }
 /* Footer */
 
 .main__footer {
-	background: #fafafa;
-	border-top: 0;
-	color: #c0c0c0;
-	overflow: hidden;
-	padding: 1em 0 1em 0.5em;
-	.copyright {
-		font-size: 0.8em;
-		line-height: 1em;
-		list-style: none;
-		padding: 0;
-		display: flex;
-		li {
-			&:before {
-				margin: 0 0.2em 0 0.2em;
-			}
-		}
-	}
+  background: #fafafa;
+  border-top: 0;
+  color: #c0c0c0;
+  overflow: hidden;
+  padding: 1em 0 1em 0.5em;
+  .copyright {
+    font-size: 0.8em;
+    line-height: 1em;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    li {
+      &:before {
+        margin: 0 0.2em 0 0.2em;
+      }
+    }
+  }
 }
 // titlebar none on normal view
 #titleBar {
-	display: none;
+  display: none;
 }
 
 /* Large */
 
-@include breakpoint("<=large") {
-	$size-header: 17em;
+@include breakpoint('<=large') {
+  $size-header: 17em;
 
-	/* Basic */
-	html,
-	body {
-		overflow-x: hidden;
-	}
+  /* Basic */
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
-	body,
-	input,
-	textarea {
-		font-size: 12pt;
-	}
+  body,
+  input,
+  textarea {
+    font-size: 12pt;
+  }
 
-	/* Header */
-	.header {
-		@include vendor("backface-visibility", "hidden");
-		@include vendor("transition", ("transform #{_duration(header)} ease"));
-		display: flex;
-		height: 100%;
-		overflow-y: auto;
-		position: fixed;
-		top: 0;
-		width: $size-header;
-		z-index: _misc(z-index-base) + 2;
-		/* Animation is fine */
-		@if _misc(header-side) == "right" {
-			@include vendor("transform", "translateX(#{$size-header})");
-			right: 0;
-		} @else {
-			@include vendor("transform", "translateX(#{$size-header * -1})");
-			left: 0;
-		}
+  /* Header */
+  .header {
+    @include vendor('backface-visibility', 'hidden');
+    @include vendor('transition', ('transform #{_duration(header)} ease'));
+    display: flex;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: $size-header;
+    z-index: _misc(z-index-base) + 2;
+    /* Animation is fine */
+    @if _misc(header-side) == 'right' {
+      @include vendor('transform', 'translateX(#{$size-header})');
+      right: 0;
+    } @else {
+      @include vendor('transform', 'translateX(#{$size-header * -1})');
+      left: 0;
+    }
 
-		> footer {
-			bottom: auto;
-			left: auto;
-			margin: 0.5em 0 0 0;
-			position: relative;
-			right: auto;
-			top: auto;
-		}
-	}
+    > footer {
+      bottom: auto;
+      left: auto;
+      margin: 0.5em 0 0 0;
+      position: relative;
+      right: auto;
+      top: auto;
+    }
+  }
 
-	/* Wrapper */
+  /* Wrapper */
 
-	.wrapper {
-		@include vendor("backface-visibility", "hidden");
-		@include vendor("transition", "transform #{_duration(header)} ease");
-		padding: 44px 0 1px 0;
-	}
+  .wrapper {
+    @include vendor('backface-visibility', 'hidden');
+    @include vendor('transition', 'transform #{_duration(header)} ease');
+    padding: 44px 0 1px 0;
+  }
 
-	/* Header Panel */
-	#titleBar {
-		@include vendor("backface-visibility", "hidden");
-		@include vendor("transition", "transform #{_duration(header)} ease");
-		display: block;
-		height: 44px;
-		left: 0;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: _misc(z-index-base) + 1;
-		background: #222;
-		color: #fff;
-		.title {
-			color: #fff;
-			display: block;
-			font-weight: _font(weight-bold);
-			height: 44px;
-			line-height: 44px;
-			padding: 0 1em;
-			width: 100%;
+  /* Header Panel */
+  #titleBar {
+    @include vendor('backface-visibility', 'hidden');
+    @include vendor('transition', 'transform #{_duration(header)} ease');
+    display: block;
+    height: 44px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: _misc(z-index-base) + 1;
+    background: #222;
+    color: #fff;
+    .title {
+      color: #fff;
+      display: block;
+      font-weight: _font(weight-bold);
+      height: 44px;
+      line-height: 44px;
+      padding: 0 1em;
+      width: 100%;
 
-			@if _misc(header-side) == "right" {
-				text-align: left;
-			} @else {
-				text-align: right;
-			}
+      @if _misc(header-side) == 'right' {
+        text-align: left;
+      } @else {
+        text-align: right;
+      }
 
-			a {
-				border: 0;
-				text-decoration: none;
-				color: inherit;
-			}
-		}
+      a {
+        border: 0;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
 
-		.toggle {
-			@include icon(false, solid);
-			height: 4em;
-			position: absolute;
-			top: 0;
-			width: 6em;
-			border: 0;
-			outline: 0;
+    .toggle {
+      @include icon(false, solid);
+      height: 4em;
+      position: absolute;
+      top: 0;
+      width: 6em;
+      border: 0;
+      outline: 0;
 
-			@if _misc(header-side) == "right" {
-				right: 0;
-			} @else {
-				left: 0;
-			}
+      @if _misc(header-side) == 'right' {
+        right: 0;
+      } @else {
+        left: 0;
+      }
 
-			&:before {
-				background: _palette(accent1, bg);
-				color: _palette(accent1, fg-bold);
-				content: "\f0c9";
-				display: block;
-				font-size: 18px;
-				height: 44px;
-				line-height: 44px;
-				position: absolute;
-				text-align: center;
-				top: 0;
-				width: 64px;
+      &:before {
+        background: _palette(accent1, bg);
+        color: _palette(accent1, fg-bold);
+        content: '\f0c9';
+        display: block;
+        font-size: 18px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 64px;
 
-				@if _misc(header-side) == "right" {
-					right: 0;
-				} @else {
-					left: 0;
-				}
-			}
-		}
-	}
+        @if _misc(header-side) == 'right' {
+          right: 0;
+        } @else {
+          left: 0;
+        }
+      }
+    }
+  }
 
-	body {
-		&.header-visible {
-			.wrapper,
-			#titleBar {
-				@if _misc(header-side) == "right" {
-					@include vendor("transform", "translateX(#{$size-header * -1})");
-				} @else {
-					@include vendor("transform", "translateX(#{$size-header})");
-				}
-			}
-			.header {
-				@include vendor("transform", "translateX(0)");
-			}
-		}
-	}
+  body {
+    &.header-visible {
+      .wrapper,
+      #titleBar {
+        @if _misc(header-side) == 'right' {
+          @include vendor('transform', 'translateX(#{$size-header * -1})');
+        } @else {
+          @include vendor('transform', 'translateX(#{$size-header})');
+        }
+      }
+      .header {
+        @include vendor('transform', 'translateX(0)');
+      }
+    }
+  }
 }
 
 /* SMALL */
-@include breakpoint("<=small") {
-	$size-header: 17em;
-	/* Basic */
+@include breakpoint('<=small') {
+  $size-header: 17em;
+  /* Basic */
 
-	html,
-	body {
-		overflow-x: hidden;
-	}
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
-	body,
-	input,
-	select,
-	textarea {
-		font-size: 12pt;
-	}
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 12pt;
+  }
 
-	/* Header */
-	.header {
-		width: $size-header;
+  /* Header */
+  .header {
+    width: $size-header;
 
-		@if _misc(header-side) == "right" {
-			@include vendor("transform", "translateX(#{$size-header})");
-			right: 0;
-		} @else {
-			@include vendor("transform", "translateX(#{$size-header * -1})");
-			left: 0;
-		}
+    @if _misc(header-side) == 'right' {
+      @include vendor('transform', 'translateX(#{$size-header})');
+      right: 0;
+    } @else {
+      @include vendor('transform', 'translateX(#{$size-header * -1})');
+      left: 0;
+    }
 
-		> footer {
-			margin: 0.5em 0 0 0;
-			position: relative;
-			bottom: auto;
-			left: auto;
-			right: auto;
-			top: auto;
-		}
-	}
+    > footer {
+      margin: 0.5em 0 0 0;
+      position: relative;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      top: auto;
+    }
+  }
 
-	/* Wrapper */
-	.wrapper {
-		@include vendor("backface-visibility", "hidden");
-		@include vendor("transition", "transform #{_duration(header)} ease");
-		padding: 44px 0 1px 0;
-	}
-	.projects {
-		&__container {
-			display: flex;
-			flex-direction: column;
-			> a {
-				display: block;
-				width: 100%;
-				> img {
-					width: 100%;
-					border-radius: _size(border-radius);
-				}
-			}
-		}
-		article {
-			border-top: solid (_size(border-width) * 1.5) _palette(border);
-			margin-bottom: _size(element-margin);
-			padding-top: _size(element-margin);
-			&:first-child {
-				border-top: 0;
-				padding-top: 0;
-			}
-		}
-	}
-	/* Header Panel */
-	#titleBar {
-		@include vendor("backface-visibility", "hidden");
-		@include vendor("transition", "transform #{_duration(header)} ease");
-		display: block;
-		height: 44px;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		z-index: _misc(z-index-base) + 1;
-		background: #222;
-		color: #fff;
-		min-width: 320px;
+  /* Wrapper */
+  .wrapper {
+    @include vendor('backface-visibility', 'hidden');
+    @include vendor('transition', 'transform #{_duration(header)} ease');
+    padding: 44px 0 1px 0;
+  }
+  .projects {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      > a {
+        display: block;
+        width: 100%;
+        > img {
+          width: 100%;
+          border-radius: _size(border-radius);
+        }
+      }
+    }
+    article {
+      border-top: solid (_size(border-width) * 1.5) _palette(border);
+      margin-bottom: _size(element-margin);
+      padding-top: _size(element-margin);
+      &:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+    }
+  }
+  /* Header Panel */
+  #titleBar {
+    @include vendor('backface-visibility', 'hidden');
+    @include vendor('transition', 'transform #{_duration(header)} ease');
+    display: block;
+    height: 44px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: _misc(z-index-base) + 1;
+    background: #222;
+    color: #fff;
+    min-width: 320px;
 
-		.title {
-			color: #fff;
-			display: block;
-			font-weight: _font(weight-bold);
-			height: 44px;
-			line-height: 44px;
-			padding: 0 1em;
-			width: 100%;
+    .title {
+      color: #fff;
+      display: block;
+      font-weight: _font(weight-bold);
+      height: 44px;
+      line-height: 44px;
+      padding: 0 1em;
+      width: 100%;
 
-			@if _misc(header-side) == "right" {
-				text-align: left;
-			} @else {
-				text-align: right;
-			}
-			a {
-				border: 0;
-				text-decoration: none;
-				color: inherit;
-			}
-		}
+      @if _misc(header-side) == 'right' {
+        text-align: left;
+      } @else {
+        text-align: right;
+      }
+      a {
+        border: 0;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
 
-		.toggle {
-			@include icon(false, solid);
-			height: 4em;
-			position: absolute;
-			top: 0;
-			width: 6em;
-			border: 0;
-			outline: 0;
+    .toggle {
+      @include icon(false, solid);
+      height: 4em;
+      position: absolute;
+      top: 0;
+      width: 6em;
+      border: 0;
+      outline: 0;
 
-			@if _misc(header-side) == "right" {
-				right: 0;
-			} @else {
-				left: 0;
-			}
+      @if _misc(header-side) == 'right' {
+        right: 0;
+      } @else {
+        left: 0;
+      }
 
-			&:before {
-				background: _palette(accent1, bg);
-				color: _palette(accent1, fg-bold);
-				content: "\f0c9";
-				display: block;
-				font-size: 18px;
-				height: 44px;
-				line-height: 44px;
-				position: absolute;
-				text-align: center;
-				top: 0;
-				width: 64px;
-				@if _misc(header-side) == "right" {
-					right: 0;
-				} @else {
-					left: 0;
-				}
-			}
-		}
-	}
-	body {
-		&.header-visible {
-			.wrapper,
-			#titleBar {
-				@if _misc(header-side) == "right" {
-					@include vendor("transform", "translateX(#{$size-header * -1})");
-				} @else {
-					@include vendor("transform", "translateX(#{$size-header})");
-				}
-			}
-			.header {
-				@include vendor("transform", "translateX(0)");
-			}
-		}
-	}
+      &:before {
+        background: _palette(accent1, bg);
+        color: _palette(accent1, fg-bold);
+        content: '\f0c9';
+        display: block;
+        font-size: 18px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 64px;
+        @if _misc(header-side) == 'right' {
+          right: 0;
+        } @else {
+          left: 0;
+        }
+      }
+    }
+  }
+  body {
+    &.header-visible {
+      .wrapper,
+      #titleBar {
+        @if _misc(header-side) == 'right' {
+          @include vendor('transform', 'translateX(#{$size-header * -1})');
+        } @else {
+          @include vendor('transform', 'translateX(#{$size-header})');
+        }
+      }
+      .header {
+        @include vendor('transform', 'translateX(0)');
+      }
+    }
+  }
 }
 // /*Resize back animation*/
 // @include breakpoint(">large") {
