@@ -3,6 +3,12 @@
 @import '../css/reset.min.css';
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@font-face {
+  font-family: "Press Start 2P";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/pressstart2p-regular.woff2") format("woff2"), url("../webfonts/pressstart2p-regular.woff") format("woff");
+}
 /* Basic/Re-usable html elements with combinations */
 html {
   box-sizing: border-box;
@@ -40,7 +46,7 @@ input,
 select,
 textarea {
   color: #888;
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif, "Press Start 2P";
   font-size: 16pt;
   font-weight: 400;
   line-height: 1.5em;
@@ -520,8 +526,21 @@ button:focus {
 }
 
 /* Main layout Do not touch*/
+.main__description__banner {
+  position: relative;
+}
 .main__description__banner img {
   width: 100%;
+}
+.main__description__banner p {
+  padding: 0 3em;
+  bottom: -1em;
+  font-family: "Press Start 2P";
+  font-size: 3em;
+  width: 50%;
+  height: 30%;
+  position: absolute;
+  color: #fff;
 }
 .main > section {
   border-top: solid 6px #f4f4f4;
@@ -760,6 +779,10 @@ textarea {
     left: auto;
     right: auto;
     top: auto;
+  }
+
+  .main__description__banner p {
+    font-size: 2em;
   }
 
   /* Wrapper */

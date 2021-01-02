@@ -6,91 +6,104 @@
 */
 
 (function ($) {
-	var $window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$titleBar = null,
-		$nav = $('#navlinks');
+  var $window = $(window),
+    $body = $('body'),
+    $header = $('#header'),
+    $titleBar = null,
+    $nav = $('#navlinks');
 
-	// Breakpoints.
-	breakpoints({
-		large: ['769', '1280px'],
-		small: [null, '768px'],
-	});
+  // Breakpoints.
+  breakpoints({
+    large: ['769', '1280px'],
+    small: [null, '768px'],
+  });
 
-	// Play initial animations on page load.
-	$window.on('load', function () {
-		window.setTimeout(function () {
-			$body.removeClass('is-preload');
-		}, 100);
-	});
+  // Hero typed
+  if ($('.typed').length) {
+    var typed_strings = $('.typed').data('typed-items');
+    typed_strings = typed_strings.split(',');
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000,
+    });
+  }
 
-	// Tweaks/fixes.
+  // Play initial animations on page load.
+  $window.on('load', function () {
+    window.setTimeout(function () {
+      $body.removeClass('is-preload');
+    }, 100);
+  });
 
-	// Polyfill: Object fit.
-	if (!browser.canUse('object-fit')) {
-		$('.image[data-position]').each(function () {
-			var $this = $(this),
-				$img = $this.children('img');
+  // Tweaks/fixes.
 
-			// Apply img as background.
-			$this
-				.css('background-image', 'url("' + $img.attr('src') + '")')
-				.css('background-position', $this.data('position'))
-				.css('background-size', 'cover')
-				.css('background-repeat', 'no-repeat');
+  // Polyfill: Object fit.
+  if (!browser.canUse('object-fit')) {
+    $('.image[data-position]').each(function () {
+      var $this = $(this),
+        $img = $this.children('img');
 
-			// Hide img.
-			$img.css('opacity', '0');
-		});
-	}
+      // Apply img as background.
+      $this
+        .css('background-image', 'url("' + $img.attr('src') + '")')
+        .css('background-position', $this.data('position'))
+        .css('background-size', 'cover')
+        .css('background-repeat', 'no-repeat');
 
-	// Header Panel.
+      // Hide img.
+      $img.css('opacity', '0');
+    });
+  }
 
-	// Nav. Get a list, remove other active classes and leave current target a active
-	var $nav_a = $nav.find('a');
+  // Header Panel.
 
-	$nav_a.addClass('scrolly').on('click', function () {
-		var $this = $(this);
+  // Nav. Get a list, remove other active classes and leave current target a active
+  var $nav_a = $nav.find('a');
 
-		// External link? Bail.
-		if ($this.attr('href').charAt(0) != '#') return;
+  $nav_a.addClass('scrolly').on('click', function () {
+    var $this = $(this);
 
-		// Deactivate all links.
-		$nav_a.removeClass('active');
+    // External link? Bail.
+    if ($this.attr('href').charAt(0) != '#') return;
 
-		// Activate link *and* lock it (so scrolly doesn't try to activate other links as we're scrolling to this one's section).
-		$this.addClass('active', 'active-locked');
-	});
+    // Deactivate all links.
+    $nav_a.removeClass('active');
 
-	// Title Bar.
-	$titleBar = $(
-		`<div id="titleBar"> 
+    // Activate link *and* lock it (so scrolly doesn't try to activate other links as we're scrolling to this one's section).
+    $this.addClass('active', 'active-locked');
+  });
+
+  // Title Bar.
+  $titleBar = $(
+    `<div id="titleBar"> 
 			<a href="#header" class="toggle"></a>
 			<span class="title">
 			${$('#profile').html()}
 			</span>
 			</div>`
-	).appendTo($body);
+  ).appendTo($body);
 
-	// Panel.
-	$header.panel({
-		delay: 500,
-		hideOnClick: true,
-		hideOnSwipe: true,
-		resetScroll: true,
-		resetForms: true,
-		side: 'right',
-		target: $body,
-		visibleClass: 'header-visible',
-	});
+  // Panel.
+  $header.panel({
+    delay: 500,
+    hideOnClick: true,
+    hideOnSwipe: true,
+    resetScroll: true,
+    resetForms: true,
+    side: 'right',
+    target: $body,
+    visibleClass: 'header-visible',
+  });
 
-	// Scrolly.
-	$('.scrolly').scrolly({
-		speed: 1000,
-		offset: function () {
-			if (breakpoints.active('<=large')) return $titleBar.height();
-			return 0;
-		},
-	});
+  // Scrolly.
+  $('.scrolly').scrolly({
+    speed: 1000,
+    offset: function () {
+      if (breakpoints.active('<=large')) return $titleBar.height();
+      return 0;
+    },
+  });
 })(jQuery);

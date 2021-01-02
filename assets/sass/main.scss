@@ -7,6 +7,8 @@
 @import '../css/reset.min.css';
 @import url('fontawesome-all.min.css');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400');
+@include font-face('Press Start 2P', '../webfonts/pressstart2p-regular');
+
 // Breakpoints.
 //breakpoints(min,max) and base header section width
 @include breakpoints(
@@ -530,8 +532,19 @@ button {
 /* Main layout Do not touch*/
 .main {
   &__description__banner {
+    position: relative;
     img {
       width: 100%;
+    }
+    p {
+      padding: 0 3em;
+      bottom: -1em;
+      font-family: 'Press Start 2P';
+      font-size: 3em;
+      width: 50%;
+      height: 30%;
+      position: absolute;
+      color: _palette(bg);
     }
   }
   > section {
@@ -783,6 +796,13 @@ button {
     }
   }
 
+  .main {
+    &__description__banner {
+      p {
+        font-size: 2em;
+      }
+    }
+  }
   /* Wrapper */
   .wrapper {
     @include vendor('backface-visibility', 'hidden');
