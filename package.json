@@ -19,12 +19,13 @@
   "bugs": {
     "url": "https://github.com/terence1988/terence1988.github.io/issues"
   },
-  "homepage": "https://github.com/terence1988/terence1988.github.io#readme",
+  "homepage": "https://github.com/terence1988/terence1988.github.io",
   "devDependencies": {
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-dollar-sign": "^1.0.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jquery": "^1.5.1"
+    "eslint-plugin-jquery": "^1.5.1",
+    "jest": "^26.6.3"
   }
 }

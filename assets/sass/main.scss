@@ -545,6 +545,8 @@ button {
       height: 30%;
       position: absolute;
       color: _palette(bg);
+      @media screen {
+      }
     }
   }
   > section {
@@ -759,7 +761,7 @@ button {
 
 /* SMALL */
 @include breakpoint('<=small') {
-  $size-header: 17em;
+  $size-header: 15em;
   /* Basic */
 
   html,
@@ -799,7 +801,15 @@ button {
   .main {
     &__description__banner {
       p {
-        font-size: 2em;
+        font-size: 1.5em;
+        padding-left: 0.5em;
+      }
+    }
+    &__skills {
+      &--icons {
+        > .icon {
+          width: 100%;
+        }
       }
     }
   }
@@ -817,8 +827,10 @@ button {
         display: block;
         width: 100%;
         > img {
-          width: 100%;
           border-radius: _size(border-radius);
+        }
+        + header {
+          width: 100%;
         }
       }
     }
@@ -916,6 +928,8 @@ button {
       .header {
         @include vendor('transform', 'translateX(0)');
       }
+    }
+    ul.icon {
     }
   }
 }

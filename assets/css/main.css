@@ -765,11 +765,11 @@ textarea {
 
   /* Header */
   .header {
-    width: 17em;
-    -moz-transform: translateX(17em);
-    -webkit-transform: translateX(17em);
-    -ms-transform: translateX(17em);
-    transform: translateX(17em);
+    width: 15em;
+    -moz-transform: translateX(15em);
+    -webkit-transform: translateX(15em);
+    -ms-transform: translateX(15em);
+    transform: translateX(15em);
     right: 0;
   }
   .header > footer {
@@ -782,7 +782,11 @@ textarea {
   }
 
   .main__description__banner p {
-    font-size: 2em;
+    font-size: 1.5em;
+    padding-left: 0.5em;
+  }
+  .main__skills--icons > .icon {
+    width: 100%;
   }
 
   /* Wrapper */
@@ -807,8 +811,10 @@ textarea {
     width: 100%;
   }
   .projects__container > a > img {
-    width: 100%;
     border-radius: 5px;
+  }
+  .projects__container > a + header {
+    width: 100%;
   }
   .projects article {
     border-top: solid 3px #f4f4f4;
@@ -895,10 +901,10 @@ textarea {
 
   body.header-visible .wrapper,
 body.header-visible #titleBar {
-    -moz-transform: translateX(-17em);
-    -webkit-transform: translateX(-17em);
-    -ms-transform: translateX(-17em);
-    transform: translateX(-17em);
+    -moz-transform: translateX(-15em);
+    -webkit-transform: translateX(-15em);
+    -ms-transform: translateX(-15em);
+    transform: translateX(-15em);
   }
   body.header-visible .header {
     -moz-transform: translateX(0);
