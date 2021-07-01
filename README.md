@@ -1,3 +1,3 @@
-# This is my personal portofolio page/site
+# Redoing this site
 
-Working in Progress to make it better lifelong
+The site will probably stay offline or 404 for a while
