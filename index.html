@@ -1,0 +1,196 @@
+<html>
+	<head>
+		<!-- Form: WriteKey -->
+		<form method="get">
+			<input type="text" name="writeKey" placeholder="Writekey" />
+			<button>Load</button>
+		</form>
+		<script>
+			const { searchParams } = new URL(document.location);
+			const writeKey = searchParams.get("writeKey");
+			document.querySelector("input").value = writeKey;
+		</script>
+
+		<!-- Form: Clear OneTrust Cookie -->
+		<button id="clear-ot-cookies">Clear OneTrust Cookies & Reload</button>
+		<script>
+			document.getElementById("clear-ot-cookies").addEventListener("click", () => {
+				["OptanonConsent", "OptanonAlertBoxClosed"].forEach((name) => {
+					document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+				});
+				window.location.reload();
+				console.log("OneTrust Cookies cleared.");
+			});
+		</script>
+
+		<!-- OneTrust Vendor Script -->
+		<script
+			src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+			type="text/javascript"
+			charset="UTF-8"
+			data-domain-script="018e5558-b2de-78f9-946b-9bcaf2a124fd"
+		></script>
+
+		<!-- OneTrust Wrapper -->
+		<script src="https://cdn.jsdelivr.net/npm/@segment/analytics-consent-wrapper-onetrust@latest/dist/umd/analytics-onetrust.umd.js"></script>
+		<!-- Segment Snippet (Modified)-->
+		<script>
+			!(function () {
+				var i = "analytics",
+					analytics = (window[i] = window[i] || []);
+				if (!analytics.initialize)
+					if (analytics.invoked)
+						window.console && console.error && console.error("Segment snippet included twice.");
+					else {
+						analytics.invoked = !0;
+						analytics.methods = [
+							"trackSubmit",
+							"trackClick",
+							"trackLink",
+							"trackForm",
+							"pageview",
+							"identify",
+							"reset",
+							"group",
+							"track",
+							"ready",
+							"alias",
+							"debug",
+							"page",
+							"screen",
+							"once",
+							"off",
+							"on",
+							"addSourceMiddleware",
+							"addIntegrationMiddleware",
+							"setAnonymousId",
+							"addDestinationMiddleware",
+							"register"
+						];
+						analytics.factory = function (e) {
+							return function () {
+								if (window[i].initialized) return window[i][e].apply(window[i], arguments);
+								var n = Array.prototype.slice.call(arguments);
+								if (["track", "screen", "alias", "group", "page", "identify"].indexOf(e) > -1) {
+									var c = document.querySelector("link[rel='canonical']");
+									n.push({
+										__t: "bpc",
+										c: (c && c.getAttribute("href")) || void 0,
+										p: location.pathname,
+										u: location.href,
+										s: location.search,
+										t: document.title,
+										r: document.referrer
+									});
+								}
+								n.unshift(e);
+								analytics.push(n);
+								return analytics;
+							};
+						};
+						for (var n = 0; n < analytics.methods.length; n++) {
+							var key = analytics.methods[n];
+							analytics[key] = analytics.factory(key);
+						}
+						analytics.load = function (key, n) {
+							var t = document.createElement("script");
+							t.type = "text/javascript";
+							t.async = !0;
+							t.setAttribute("data-global-segment-analytics-key", i);
+							t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+							var r = document.getElementsByTagName("script")[0];
+							console.log(r)
+							r.parentNode.insertBefore(t, r);
+							analytics._loadOptions = n;
+						};
+						analytics._writeKey = "AJWHcvm8CziOYja33vj0maZ1sQ1QxBnt";
+						analytics.SNIPPET_VERSION = "5.2.1";
+						withOneTrust(analytics).load("AJWHcvm8CziOYja33vj0maZ1sQ1QxBnt");
+						analytics.page();
+					}
+			})();
+		</script>
+	</head>
+
+	<body>
+		<form>
+			<textarea name="event" id="event">
+{
+  "name": "hi",
+  "properties": { },
+  "traits": { },
+  "options": { }
+}
+    </textarea
+			>
+			<div>
+				<button id="track">Track</button>
+				<button id="identify">Identify</button>
+			</div>
+		</form>
+		<h2>Consent Changed Event</h2>
+		<pre id="consent-changed"></pre>
+		<h2>Logs</h2>
+		<pre id="logs"></pre>
+
+		<script type="text/javascript">
+			const displayConsentLogs = (str) =>
+				(document.querySelector("#consent-changed").textContent = str);
+			analytics.on("track", (name, properties, options) => {
+				if (name.includes("Segment Consent")) {
+					displayConsentLogs("Consent Changed Event Fired");
+					setTimeout(() => displayConsentLogs(""), 3000);
+				}
+			});
+			const displayRegularLogs = (str) => (document.querySelector("#logs").textContent = str);
+			const logEvent = (promise) => {
+				if (Array.isArray(promise)) {
+					displayRegularLogs("Analytics is not initialized!");
+					setTimeout(() => displayRegularLogs(""), 5000);
+					return;
+				}
+				if (promise) {
+					promise.then((ctx) => {
+						ctx.flush();
+						displayRegularLogs(JSON.stringify(ctx.event, null, 2));
+					});
+				}
+			};
+
+			document.querySelector("#track").addEventListener("click", async (e) => {
+				e.preventDefault();
+				const contents = document.querySelector("#event").value;
+				const evt = JSON.parse(contents);
+				const promise = window.analytics.track(
+					evt.name ?? "",
+					evt.properties ?? {},
+					evt.options ?? {}
+				);
+				logEvent(promise);
+			});
+
+			document.querySelector("#identify").addEventListener("click", async (e) => {
+				e.preventDefault();
+				const contents = document.querySelector("#event").value;
+				const evt = JSON.parse(contents);
+				const promise = window.analytics.identify(
+					evt.name ?? "",
+					evt.properties ?? {},
+					evt.options ?? {}
+				);
+				logEvent(promise);
+			});
+		</script>
+		<style>
+			body {
+				font-family: monospace;
+			}
+
+			#event {
+				margin: 2em 0;
+				min-height: 200px;
+				min-width: 700px;
+			}
+		</style>
+	</body>
+</html>
